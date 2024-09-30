@@ -4,6 +4,7 @@ const connectDB = require('./config/db');
 const authRoutes = require('./routes/authRoutes');
 const reportRoutes = require('./routes/reportRoutes');
 const bodyParser = require('body-parser');
+const cors = require('cors'); // Import cors
 
 // Charger les variables d'environnement
 dotenv.config();
@@ -13,6 +14,9 @@ const app = express();
 
 // Middleware
 app.use(bodyParser.json());
+
+// Enable CORS for all routes
+app.use(cors()); // Use cors middleware here
 
 // Connexion à MongoDB
 connectDB();
