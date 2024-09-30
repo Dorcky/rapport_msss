@@ -12,7 +12,7 @@ const transporter = nodemailer.createTransport({
 });
 
 exports.sendVerificationEmail = (email, token) => {
-    const verificationLink = `http://localhost:3000/api/auth/verify/${token}`;
+    const verificationLink = `https://rapport-msss.onrender.com/api/auth/verify/${token}`;
     const mailOptions = {
         to: email,
         subject: 'Email Verification',
@@ -22,7 +22,7 @@ exports.sendVerificationEmail = (email, token) => {
 };
 
 exports.sendPasswordResetEmail = (email, token) => {
-    const resetLink = `http://localhost:3000/api/auth/reset-password?token=${token}`;
+    const resetLink = `https://rapport-msss.onrender.com/api/auth/reset-password?token=${token}`;
     const mailOptions = {
         to: email,
         subject: 'Password Reset',
